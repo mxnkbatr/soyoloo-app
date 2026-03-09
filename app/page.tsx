@@ -17,7 +17,7 @@ import MobileHero from '@/components/MobileHero';
 import MobileProductGrid from '@/components/MobileProductGrid';
 import InfiniteScrollTrigger from '@/components/InfiniteScrollTrigger';
 
-type FilterType = 'all' | 'Шинэ' | 'Бэлэн' | 'Захиалга' | 'Хямдрал';
+type FilterType = 'all' | 'Бэлэн' | 'Захиалга';
 type SortType = 'newest' | 'price-low' | 'price-high' | 'name-az';
 
 export default function HomePage() {
@@ -137,11 +137,10 @@ export default function HomePage() {
                 </div>
               </motion.button>
 
-              {['Шинэ', 'Бэлэн', 'Захиалга', 'Хямдрал'].map((section) => {
-                const Icon = section === 'Шинэ' ? Sparkles
-                  : section === 'Бэлэн' ? Package
-                    : section === 'Захиалга' ? Clock
-                      : Tag;
+              {['Бэлэн', 'Захиалга'].map((section) => {
+                const Icon = section === 'Бэлэн' ? Package
+                  : section === 'Захиалга' ? Clock
+                    : Tag;
                 const isActive = activeFilter === section;
 
                 return (
@@ -284,7 +283,7 @@ export default function HomePage() {
               </div>
 
               {/* Infinite Scroll Trigger */}
-              {(activeFilter === 'all' || activeFilter === 'Шинэ') && (
+              {activeFilter === 'all' && (
                 <InfiniteScrollTrigger
                   onLoadMore={() => setSize(size + 1)}
                   hasMore={!isReachingEnd}
