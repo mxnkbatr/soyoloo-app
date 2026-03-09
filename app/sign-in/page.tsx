@@ -17,7 +17,7 @@ export default function SignInPage() {
   const handlePasswordLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phone.length < 8 || !password) {
-      toast.error('Please fill in all fields');
+      toast.error('Бүх талбарыг бөглөнө үү');
       return;
     }
 
@@ -32,10 +32,10 @@ export default function SignInPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Invalid credentials');
+        throw new Error(data.error || 'Нэвтрэх мэдээлэл буруу байна');
       }
 
-      toast.success('Successfully logged in!');
+      toast.success('Амжилттай нэвтэрлээ');
 
       // Update Auth Context immediately
       if (data.user) {
