@@ -148,7 +148,7 @@ export default function ProfilePage() {
             <MenuItem
               icon={Package} iconBg="#FFF0E6" iconColor="#FF6B00"
               label="Миний захиалга" href="/orders"
-              subtitle="3 идэвхтэй захиалга"
+              subtitle={`${stats.orders} захиалга`}
             />
             <MenuDivider />
             <MenuItem
