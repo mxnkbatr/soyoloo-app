@@ -155,7 +155,7 @@ export default function DiscoveryProductCard({ product, index = 0, showTrendingB
           </h3>
           <div className="flex items-center justify-between">
             <p className="text-base font-bold text-zinc-900 tracking-tight">
-              {formatCurrency(product.price)}₮
+              {formatPrice(product.price)}
             </p>
             <div className="flex items-center gap-1">
               <Star className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
